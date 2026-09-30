@@ -9,11 +9,12 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Antonio Lamanna — Automation, Architecture & AI" />
-  <meta property="og:description" content="Writing, research, books and selected projects on automation, architecture and AI." />
+  <meta property="og:description" content="Writing, papers and public repositories on automation, architecture and AI." />
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/19688044?v=4" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://api.github.com" />
   <link rel="preconnect" href="https://avatars.githubusercontent.com" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -25,10 +26,10 @@
       <a class="brand" href="#top">AL</a>
 
       <ul class="nav-links">
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#repositories">Repositories</a></li>
+        <li><a href="#books">Books</a></li>
         <li><a href="#writing">Writing</a></li>
-        <li><a href="#book">Book</a></li>
-        <li><a href="#research">Research</a></li>
+        <li><a href="#papers">Papers</a></li>
         <li><a href="#about">About</a></li>
       </ul>
 
@@ -53,27 +54,39 @@
 
       <div class="hero-actions">
         <a class="btn btn-primary" href="#writing">Read my writing</a>
-        <a class="btn btn-ghost" href="#projects">Explore projects</a>
+        <a class="btn btn-ghost" href="#repositories">Explore repositories</a>
       </div>
 
       <ul class="social-links">
         <li><a href="https://github.com/antonio-lamanna" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://medium.com/@antoniolamanna" target="_blank" rel="noopener">Medium</a></li>
+        <li><a href="https://arxiv.org/search/?query=Antonio+Lamanna&searchtype=author&abstracts=show&order=-announced_date_first&size=50" target="_blank" rel="noopener">arXiv</a></li>
         <li><a href="https://www.linkedin.com/in/antoniolamanna" target="_blank" rel="noopener">LinkedIn</a></li>
       </ul>
     </section>
 
-    <section id="projects" class="section container">
+    <section id="repositories" class="section container">
       <div class="section-head">
         <div>
-          <span class="section-label">Selected work</span>
-          <h2>Projects</h2>
+          <span class="section-label">GitHub</span>
+          <h2>Public repositories</h2>
         </div>
-        <a class="section-link" href="https://github.com/antonio-lamanna?tab=repositories" target="_blank" rel="noopener">GitHub repositories →</a>
+        <a class="section-link" href="https://github.com/antonio-lamanna?tab=repositories" target="_blank" rel="noopener">All repositories →</a>
       </div>
 
-      <div id="projects-status" class="status">Loading projects…</div>
-      <div id="projects-grid" class="grid" aria-live="polite"></div>
+      <div id="repos-status" class="status">Loading repositories…</div>
+      <div id="repos-grid" class="repo-grid" aria-live="polite"></div>
+    </section>
+
+    <section id="books" class="section container hidden-section">
+      <div class="section-head">
+        <div>
+          <span class="section-label">Published work</span>
+          <h2>Books</h2>
+        </div>
+      </div>
+
+      <div id="books-grid" class="grid" aria-live="polite"></div>
     </section>
 
     <section id="writing" class="section container">
@@ -94,46 +107,17 @@
       <div id="writing-grid" class="grid" aria-live="polite"></div>
     </section>
 
-    <section id="book" class="section container">
+    <section id="papers" class="section container">
       <div class="section-head">
         <div>
-          <span class="section-label">In development</span>
-          <h2>Book</h2>
+          <span class="section-label">Research</span>
+          <h2>Papers</h2>
         </div>
+        <a class="section-link" href="https://arxiv.org/search/?query=Antonio+Lamanna&searchtype=author&abstracts=show&order=-announced_date_first&size=50" target="_blank" rel="noopener">arXiv →</a>
       </div>
 
-      <article class="book-card">
-        <div class="book-cover" aria-hidden="true">
-          <span class="book-kicker">A Systems Introduction to</span>
-          <strong>Automation</strong>
-          <span class="book-rule"></span>
-          <small>Processes, Software, AI and the Architecture of Digital Work</small>
-        </div>
-
-        <div class="book-content">
-          <span class="eyebrow">A Systems Introduction to Automation</span>
-          <h3>Processes, Software, AI and the Architecture of Digital Work</h3>
-          <p>
-            A practical introduction to automation as a system of coordination: processes,
-            decisions, software, AI, humans, governance and execution.
-          </p>
-          <p class="muted">
-            The book is being prepared for publication. Updates and related essays will appear here.
-          </p>
-        </div>
-      </article>
-    </section>
-
-    <section id="research" class="section container">
-      <div class="section-head">
-        <div>
-          <span class="section-label">Ongoing</span>
-          <h2>Research</h2>
-        </div>
-      </div>
-
-      <div id="research-status" class="status">Loading research…</div>
-      <div id="research-grid" class="grid" aria-live="polite"></div>
+      <div id="papers-status" class="status">Loading papers…</div>
+      <div id="papers-grid" class="grid" aria-live="polite"></div>
     </section>
 
     <section id="about" class="section container">
@@ -149,13 +133,13 @@
             intelligent automation, agentic systems, governance and human–machine collaboration.
           </p>
           <p>
-            This site is a living index of the things I write, research and build. Articles stay
-            on their original publications; projects stay in their repositories; this is the place
-            that connects them.
+            This site is a living index of the things I write, publish and build. Articles stay
+            on their original publications, papers on arXiv, and code in its repositories.
           </p>
           <div class="about-links">
             <a href="https://github.com/antonio-lamanna" target="_blank" rel="noopener">GitHub ↗</a>
             <a href="https://medium.com/@antoniolamanna" target="_blank" rel="noopener">Medium ↗</a>
+            <a href="https://arxiv.org/search/?query=Antonio+Lamanna&searchtype=author&abstracts=show&order=-announced_date_first&size=50" target="_blank" rel="noopener">arXiv ↗</a>
             <a href="https://www.linkedin.com/in/antoniolamanna" target="_blank" rel="noopener">LinkedIn ↗</a>
           </div>
         </div>
