@@ -1,6 +1,11 @@
 name: Update arXiv papers
 
 on:
+  push:
+    branches: ["main"]
+    paths:
+      - "scripts/fetch-arxiv.mjs"
+      - ".github/workflows/update-arxiv.yml"
   schedule:
     - cron: "35 5 * * *"
   workflow_dispatch:
