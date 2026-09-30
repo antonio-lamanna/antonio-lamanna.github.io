@@ -1,6 +1,11 @@
 name: Update writing
 
 on:
+  push:
+    branches: ["main"]
+    paths:
+      - "scripts/fetch-medium.mjs"
+      - ".github/workflows/update-writing.yml"
   schedule:
     - cron: "15 5 * * *"
   workflow_dispatch:
