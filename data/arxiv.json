@@ -1,9 +1,12 @@
 [
   {
     "title": "A Structured Evaluation Framework for Low-Code Platform Selection: A Multi-Criteria Decision Model for Enterprise Digital Transformation",
-    "url": "https://arxiv.org/abs/2510.18590",
+    "url": "http://arxiv.org/abs/2510.18590v1",
     "date": "2025-10-21T12:42:11Z",
-    "summary": "A structured evaluation framework for enterprise low-code platform selection based on business process orchestration, UI/UX customization, integration and interoperability, governance and security, and AI-enhanced automation.",
-    "categories": []
+    "summary": "The rapid adoption of Low-Code Development Platforms (LCDPs) has created a critical need for systematic evaluation methodologies that enable organizations to make informed platform selection decisions. This paper presents a comprehensive evaluation framework…",
+    "categories": [
+      "cs.SE",
+      "cs.HC"
+    ]
   }
 ]
