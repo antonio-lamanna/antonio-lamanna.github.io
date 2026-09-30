@@ -13,8 +13,7 @@ html[data-theme="light"] {
   --text: #14161c;
   --text-muted: #646b78;
   --border: #e4e7ee;
-  --accent: #49667d;
-  --warm: #e8672f;
+  --accent: #e8672f;
   --accent-2: #f3a56f;
   --accent-contrast: #ffffff;
   --shadow: 0 8px 30px rgba(20,22,28,.07);
@@ -28,8 +27,7 @@ html[data-theme="dark"] {
   --text: #eef1f6;
   --text-muted: #a0a7b4;
   --border: #282d38;
-  --accent: #8fb0c5;
-  --warm: #f39a6d;
+  --accent: #ff8a52;
   --accent-2: #ffb98f;
   --accent-contrast: #111318;
   --shadow: 0 10px 30px rgba(0,0,0,.38);
