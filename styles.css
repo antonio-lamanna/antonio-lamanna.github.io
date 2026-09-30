@@ -417,3 +417,121 @@ img { max-width: 100%; display: block; }
   .hero-tagline { font-size: 1.05rem; }
   .section { padding-block: 2.4rem; }
 }
+
+
+.hidden-section { display: none; }
+
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+  gap: .85rem;
+}
+
+.repo-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.05rem;
+  min-height: 165px;
+  box-shadow: 0 3px 16px rgba(20,22,28,.035);
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.repo-card:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+}
+
+.repo-top {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  justify-content: space-between;
+}
+
+.repo-name {
+  font-size: .96rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.repo-name:hover { text-decoration: underline; }
+
+.repo-visibility {
+  flex: 0 0 auto;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: .08rem .42rem;
+  font-size: .66rem;
+  color: var(--text-muted);
+}
+
+.repo-desc {
+  min-height: 2.8rem;
+  margin: .65rem 0 .75rem;
+  color: var(--text-muted);
+  font-size: .82rem;
+  line-height: 1.45;
+}
+
+.repo-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem;
+  min-height: 1.25rem;
+}
+
+.repo-topic {
+  background: var(--tag-bg);
+  border-radius: 999px;
+  padding: .1rem .42rem;
+  color: var(--text-muted);
+  font-size: .65rem;
+}
+
+.repo-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .7rem;
+  margin-top: .8rem;
+  color: var(--text-muted);
+  font-size: .7rem;
+}
+
+.repo-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: .28rem;
+}
+
+.language-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: inline-block;
+}
+
+.book-media {
+  aspect-ratio: 3 / 4;
+  background: var(--tag-bg);
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.book-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.book-item {
+  max-width: 320px;
+}
+
+@media (max-width: 520px) {
+  .repo-grid { grid-template-columns: 1fr; }
+}
