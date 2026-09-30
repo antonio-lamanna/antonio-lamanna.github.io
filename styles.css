@@ -15,7 +15,7 @@ html[data-theme="light"] {
   --border: #e4e7ee;
   --accent: #49667d;
   --warm: #e8672f;
-  --accent-2: #7793a8;
+  --accent-2: #f3a56f;
   --accent-contrast: #ffffff;
   --shadow: 0 8px 30px rgba(20,22,28,.07);
   --tag-bg: #f0f2f7;
@@ -30,7 +30,7 @@ html[data-theme="dark"] {
   --border: #282d38;
   --accent: #8fb0c5;
   --warm: #f39a6d;
-  --accent-2: #b6cad8;
+  --accent-2: #ffb98f;
   --accent-contrast: #111318;
   --shadow: 0 10px 30px rgba(0,0,0,.38);
   --tag-bg: #222734;
@@ -606,23 +606,3 @@ img { max-width: 100%; display: block; }
 }
 
 
-/* Restrained warm accent: orange only for small editorial cues */
-.section-label,
-.card-kicker,
-.eyebrow {
-  color: var(--warm);
-}
-
-.avatar {
-  box-shadow: 0 0 0 2px var(--warm), var(--shadow);
-}
-
-.book-rule {
-  background: var(--warm);
-}
-
-.hero-tagline,
-a,
-.repo-name {
-  color: var(--accent);
-}
