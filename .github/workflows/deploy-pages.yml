@@ -34,7 +34,13 @@ jobs:
           ref: main
 
       - name: Rebuild book cover
-        run: cat assets/cover.b64.* | tr -d '\n' | base64 --decode > assets/low-code-strategy-cover.webp
+        run: cat assets/book-cover.b64.* | tr -d '\n' | base64 --decode > assets/low-code-strategy-cover.jpg
+
+      - name: Verify book cover
+        run: |
+          test -s assets/low-code-strategy-cover.jpg
+          test "$(wc -c < assets/low-code-strategy-cover.jpg)" -gt 10000
+          file assets/low-code-strategy-cover.jpg | grep -qi jpeg
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
