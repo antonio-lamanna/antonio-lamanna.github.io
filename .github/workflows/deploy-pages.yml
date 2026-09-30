@@ -33,6 +33,9 @@ jobs:
         with:
           ref: main
 
+      - name: Rebuild book cover
+        run: cat assets/cover.b64.* | tr -d '\n' | base64 --decode > assets/low-code-strategy-cover.webp
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
