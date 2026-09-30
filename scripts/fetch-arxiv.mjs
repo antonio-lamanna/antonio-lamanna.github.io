@@ -69,7 +69,7 @@ async function main() {
     .filter((entry) => authorNames(entry).some((name) => name.toLowerCase() === AUTHOR.toLowerCase()))
     .map((entry) => {
       const id = text(block(entry, "id"));
-      const absUrl = id.replace("export.arxiv.org", "arxiv.org");
+      const absUrl = id.replace(/^http:/, "https:").replace("export.arxiv.org", "arxiv.org");
 
       return {
         title: text(block(entry, "title")),
