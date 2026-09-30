@@ -153,6 +153,7 @@ function renderBooks(items) {
 
   if (!Array.isArray(items) || items.length === 0) {
     section?.classList.add("hidden-section");
+    document.querySelector('a[href="#books"]')?.closest("li")?.remove();
     return;
   }
 
