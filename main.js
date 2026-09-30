@@ -111,6 +111,9 @@ function renderWriting(items) {
   const grid = $("#writing-grid");
   grid.innerHTML = "";
 
+  const existingMore = $("#writing-load-more");
+  if (existingMore) existingMore.remove();
+
   if (!Array.isArray(items) || items.length === 0) {
     setStatus("writing-status", "Articles will appear here automatically as soon as they are published.");
     return;
@@ -118,7 +121,11 @@ function renderWriting(items) {
 
   setStatus("writing-status", null);
 
-  items.slice(0, 12).forEach((item) => {
+  const sorted = [...items].sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+  const batchSize = 6;
+  let visible = batchSize;
+
+  function articleCard(item) {
     const tags = (item.tags || []).slice(0, 3)
       .map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`)
       .join("");
@@ -143,8 +150,32 @@ function renderWriting(items) {
           </div>
         </div>
       </a>`;
-    grid.appendChild(card);
-  });
+    return card;
+  }
+
+  function draw() {
+    grid.innerHTML = "";
+    sorted.slice(0, visible).forEach((item) => grid.appendChild(articleCard(item)));
+
+    let more = $("#writing-load-more");
+    if (sorted.length > visible) {
+      if (!more) {
+        more = document.createElement("div");
+        more.id = "writing-load-more";
+        more.className = "load-more-wrap";
+        more.innerHTML = '<button class="btn btn-ghost load-more-btn" type="button">Load more</button>';
+        grid.insertAdjacentElement("afterend", more);
+        more.querySelector("button").addEventListener("click", () => {
+          visible += batchSize;
+          draw();
+        });
+      }
+    } else if (more) {
+      more.remove();
+    }
+  }
+
+  draw();
 }
 
 function renderBooks(items) {
