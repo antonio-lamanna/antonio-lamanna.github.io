@@ -34,7 +34,7 @@ jobs:
           ref: main
 
       - name: Rebuild book cover
-        run: cat assets/book-cover.b64.* | tr -d '\n' | base64 --decode > assets/low-code-strategy-cover.jpg
+        run: cat assets/book-cover.b64.00 assets/book-cover.b64.01 assets/book-cover.b64.02a assets/book-cover.b64.02b assets/book-cover.b64.02c assets/book-cover.b64.02d assets/book-cover.b64.03 assets/book-cover.b64.04 assets/book-cover.b64.05 | tr -d '\n' | base64 --decode > assets/low-code-strategy-cover.jpg
 
       - name: Verify book cover
         run: |
